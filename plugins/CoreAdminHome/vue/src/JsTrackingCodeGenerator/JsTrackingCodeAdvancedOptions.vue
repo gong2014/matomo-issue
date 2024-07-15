@@ -275,7 +275,11 @@ interface GetJavascriptTagResponse {
 
 function getHostNameFromUrl(url: string) {
   const urlObj = new URL(url);
-  return urlObj.hostname;
+  let hostname = urlObj.hostname;
+  if (hostname.startsWith('www.')) {
+    hostname = hostname.slice(4);
+  }
+  return hostname;
 }
 
 function getCustomVarArray(cvars: CustomVar[]) {
