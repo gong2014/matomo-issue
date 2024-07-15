@@ -1,3 +1,18 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #time {
+            font-size: 2.5em;
+        }
+    </style>
+<div id="time"></div>
 <script>
     function updateTime() {
         const timeElement = document.getElementById('time');
@@ -20,20 +35,6 @@
         
         timeElement.textContent = formattedTime;
     }
-    setInterval(updateTime, 1000);
+    updateTime();
+    setInterval(updateTime, 60000);
 </script>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        #time {
-            font-size: 2.5em;
-        }
-    </style>
-<div id="time"></div>
